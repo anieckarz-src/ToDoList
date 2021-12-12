@@ -41,21 +41,26 @@
     </tr>
     </thead>
     <tbody>
-    <tr>
-        <td class="input-group">
-            <input type="text" class="form-control" placeholder="New task">
-        </td>
+    <form action="">
 
-        <td class="cols-size">
-            <select class="form-select">
-                <option value="1">EASY</option>
-                <option value="2">MEDIUM</option>
-                <option value="3">HARD</option>
-            </select>
+        <tr>
+            <td class="input-group">
+                <input type="text" class="form-control" placeholder="New task">
+            </td>
+            <td class="cols-size">
+                <select class="form-select">
+                    <option value="1">EASY</option>
+                    <option value="2">MEDIUM</option>
+                    <option value="3">HARD</option>
+                </select>
 
-        </td>
-        <td><button class="btn btn-outline-secondary" type="button">Add task</button></td>
-    </tr>
+            </td>
+            <td><input class="btn btn-outline-secondary" type="submit" value="Add Task"></td>
+        </tr>
+
+
+    </form>
+
     <tr scope="row" th:each="i: ${task}">
         <td th:text="${i.getTask()}"/>
         <td th:text="${i.getDif()}"/>
