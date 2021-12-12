@@ -7,23 +7,29 @@
           integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
 
-<style>
+    <style>
 
-    body {
-        background-color: #292b2c;
-    }
+        body {
+            background-color: #292b2c;
+        }
 
-    #task-list {
-        width: 60%;
-        margin: auto;
-    }
+        #task-list {
+            width: 60%;
+            margin: auto;
+        }
 
-    .cols-size{
-        max-width: 50px;
-    }
+        .cols-size{
+            max-width: 50px;
+        }
+
+        button{
+            background-color: whitesmoke;
+        }
 
 
-</style>
+    </style>
+
+
 <body>
 
 <table id="task-list" class="table table-dark table-striped">
@@ -35,29 +41,29 @@
     </tr>
     </thead>
     <tbody>
-         <tr>
-            <td class="input-group">
-                <input type="text" class="form-control" placeholder="New task" >
-            </td>
+    <tr>
+        <td class="input-group">
+            <input type="text" class="form-control" placeholder="New task">
+        </td>
 
-             <td class="cols-size">
-                 <select class="form-select" >
-                     <option value="1">EASY</option>
-                     <option value="2">MEDIUM</option>
-                     <option value="3">HARD</option>
-                 </select>
+        <td class="cols-size">
+            <select class="form-select">
+                <option value="1">EASY</option>
+                <option value="2">MEDIUM</option>
+                <option value="3">HARD</option>
+            </select>
 
-             </td>
-             <td><button class="btn btn-outline-secondary" type="button">Add task</button></td>
-         </tr>
-         <tr scope="row" th:each="i: ${task}">
+        </td>
+        <td><button class="btn btn-outline-secondary" type="button">Add task</button></td>
+    </tr>
+    <tr scope="row" th:each="i: ${task}">
         <td th:text="${i.getTask()}"/>
         <td th:text="${i.getDif()}"/>
         <td class="cols-size" th:text="${i.isDone()}"/>
-         </tr>
+    </tr>
     </tbody>
 </table>
 
 
-</body>
-</html>
+
+</body></html>
