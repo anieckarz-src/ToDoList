@@ -16,9 +16,9 @@
     margin: auto;
     }
 
-    tbody{
+    table{
         height: 300px;
-        overflow: scroll;
+        overflow-y: scroll;
     }
 
 
@@ -33,7 +33,7 @@
         <th scope="col">Done</th>
     </tr>
     </thead>
-    <tbody th:>
+    <tbody >
         <tr scope="row" th:each="i: ${task}">
             <td th:text="${i.getTask()}"/>
             <td th:text="${i.getDif()}"/>
