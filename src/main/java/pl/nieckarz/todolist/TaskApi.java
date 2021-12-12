@@ -27,17 +27,17 @@ public class TaskApi {
     }
 
     @PostMapping
-    public Task addBook(@RequestBody Task task) {
+    public Task addTask(@RequestBody Task task) {
          return taskManager.save(task);
     }
 
     @PutMapping
-    public Task updateBook(@RequestBody Task task) {
+    public Task updateTask(@RequestBody Task task) {
         return taskManager.save(task);
     }
 
     @DeleteMapping
-    public void deleteBook(@RequestParam Long id) {
+    public void deleteTask(@RequestParam Long id) {
         taskManager.deleteById(id);
     }
 

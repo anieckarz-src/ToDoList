@@ -10,7 +10,7 @@ import javax.persistence.Id;
 public class Task {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     private String task;
@@ -57,4 +57,16 @@ public class Task {
     public void setDone(boolean done) {
         this.done = done;
     }
+
+    @Override
+    public String toString() {
+        return "Task{" +
+                "id=" + id +
+                ", task='" + task + '\'' +
+                ", dif=" + dif +
+                ", done=" + done +
+                '}';
+    }
+
+
 }
