@@ -5,8 +5,8 @@ Simple crud table based on a database that we can manipulate through API that is
 Project is created with:
 *Java Spring
 *Jpa
-*Rest API
-*H2 db (PostgreSQL in final version)
+*API
+*H2 db (couse of heroku)
 *HTML/CSS
 *Thymeleaf
 *Boostrap 5
