@@ -21,7 +21,6 @@ public class Task {
     public Task(String task, Difficult dif) {
         this.task = task;
         this.dif = dif;
-        this.done = false;
     }
 
 

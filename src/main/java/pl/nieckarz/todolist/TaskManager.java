@@ -33,6 +33,17 @@ public class TaskManager {
         taskRepository.deleteById(task);
     }
 
+    public Task changeDone(Task task){
+        System.out.println("im here!");
+        if(task.isDone())
+            task.setDone(false);
+        else{
+            task.setDone(true);
+        }
+
+        return task;
+    }
+
 
 
 
