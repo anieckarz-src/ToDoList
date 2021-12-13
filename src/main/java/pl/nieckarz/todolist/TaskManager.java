@@ -17,8 +17,8 @@ public class TaskManager {
         this.taskRepository = taskRepository;
     }
 
-    public Optional<Task> findById(Long id){
-        return  taskRepository.findById(id);
+    public Optional<Task> findById(String task){
+        return  taskRepository.findById(task);
     }
 
     public Iterable<Task> findAll(){
@@ -29,9 +29,10 @@ public class TaskManager {
         return taskRepository.save(task);
     }
 
-    public void deleteById(Long id){
-        taskRepository.deleteById(id);
+    public void deleteById(String task){
+        taskRepository.deleteById(task);
     }
+
     @EventListener(ApplicationReadyEvent.class)
     public void fillDB(){
         save(new Task("make a bed",Difficult.EASY));

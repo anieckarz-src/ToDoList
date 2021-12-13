@@ -22,8 +22,8 @@ public class TaskApi {
     }
 
     @GetMapping
-    public Optional<Task> getById(@RequestParam Long id) {
-        return taskManager.findById(id);
+    public Optional<Task> getById(@RequestParam String task) {
+        return taskManager.findById(task);
     }
 
     @PostMapping
@@ -37,8 +37,8 @@ public class TaskApi {
     }
 
     @DeleteMapping
-    public void deleteTask(@RequestParam Long id) {
-        taskManager.deleteById(id);
+    public void deleteTask(@RequestParam String task) {
+        taskManager.deleteById(task);
     }
 
 }

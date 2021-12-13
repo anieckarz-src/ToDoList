@@ -10,10 +10,8 @@ import javax.persistence.Id;
 public class Task {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
-
     private String task;
+
     private Difficult dif;
     private boolean done;
 
@@ -26,13 +24,6 @@ public class Task {
         this.done = false;
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getTask() {
         return task;
@@ -61,7 +52,6 @@ public class Task {
     @Override
     public String toString() {
         return "Task{" +
-                "id=" + id +
                 ", task='" + task + '\'' +
                 ", dif=" + dif +
                 ", done=" + done +
