@@ -2,6 +2,8 @@ package pl.nieckarz.todolist;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -29,7 +31,8 @@ public class TaskController {
     @PostMapping("/add-task")
     public String addTask(@ModelAttribute ("newTask") Task task) {
         System.out.println(task.toString());
-        taskManager.save(task);
+            taskManager.save(task);
+
         return "redirect:/";
     }
 
@@ -39,6 +42,14 @@ public class TaskController {
 
         return "redirect:/";
     }
+
+
+    @RequestMapping("/done/{task}")
+    public String changeDone(@PathVariable(name = "task") String task){
+
+        return "redirect:/";
+    }
+
 
 
 }

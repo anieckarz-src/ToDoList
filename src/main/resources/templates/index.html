@@ -7,6 +7,18 @@
           integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
 
+<script>
+
+    function change()
+    {
+        var elem = document.getElementById("myButton1");
+        if (elem.value=="Close Curtain") elem.value = "Open Curtain";
+        else elem.value = "Close Curtain";
+    }
+
+
+</script>
+
     <style>
 
         body {
@@ -45,7 +57,8 @@
     <tr scope="row" th:each="i: ${task}">
         <td th:text="${i.getTask()}"/>
         <td th:text="${i.getDif()}"/>
-        <td class="cols-size" th:text="${i.isDone()}"/>
+
+        <td><a class="btn btn-outline-secondary" th:text="${i.isDone()}" th:href="'/done/'+ ${i.getTask()}"></a> </td>
         <td><a class="btn btn-outline-secondary" th:href="@{'/delete/'+${i.getTask()}}">Delete</a> </td>
 
     </tr>
